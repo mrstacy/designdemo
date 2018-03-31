@@ -6,7 +6,7 @@
 	"prefer-stable" : true,
 	"config" : {
 		"platform" : {
-			"php" : "5.5.9"
+			"php" : "5.6"
 		}
 	},
 	"autoload" : {
@@ -20,8 +20,6 @@
 		}
 	},
 	"require" : {
-		"monolog/monolog" : "@stable",
-		"symfony/validator" : "^3.2",
 		"silex/silex" : "~2.0"
 	},
 	"require-dev" : {

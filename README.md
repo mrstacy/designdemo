@@ -33,15 +33,15 @@ php composer.phar install
 How to run locally:
 ------------
 
-Start in php built in web server (from root project directory):
+Start php built in web server (from root project directory):
 ```
-php -S 0.0.0.0:80 -t public/
+php -S 0.0.0.0:80 public/index.php
 ```
 
 Once server is started you can view REST endpoints in your browser
 ```
 http://127.0.0.1/v1/emailtoken/email/emailaddress@gmail.com
-http://127.0.0.1/v1/emailtoken/email/emailaddress@gmail.com/token/abcd123
+http://127.0.0.1/v1/emailtoken/email/emailaddress@gmail.com/token/34c3836ca3d0325502f0999da4b9e480
 ```
 
 
@@ -53,7 +53,7 @@ You can view swagger contract definition file here:
 ```
 
 You can view these in swagger editor here:
-[https://editor.swagger.io/?url=https://raw.githubusercontent.com/mrstacy/designdemo/master/contracts/emailToken.yaml]
+* https://editor.swagger.io/?url=https://raw.githubusercontent.com/mrstacy/designdemo/master/contracts/emailToken.yaml
 
 
 Running Tests:

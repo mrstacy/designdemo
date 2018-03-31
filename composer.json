@@ -1,0 +1,30 @@
+{
+  "name": "mrstacy/designdemo",
+  "description": "Design demo email address token api",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+       "php": "5.5.9"
+     }
+  },
+  "autoload": {
+    "psr-4": {
+      "MrStacy\\DesignDemo\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MrStacy\\DesignDemo\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "monolog/monolog": "@stable",
+    "symfony/validator": "^3.2",
+    "silex/silex": "~2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.6.9"
+  }
+}

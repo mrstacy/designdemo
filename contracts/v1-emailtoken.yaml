@@ -1,0 +1,39 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: emailtoken generator api demo
+  description: Endpoint to retrieve an email token for an email address
+host: localhost
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  '/v1/emailtoken/{emailAddress}':
+    get:
+      description: Endpoint to retrieve an email token for email address
+      tags:
+        - emailToken
+      operationId: getEmailToken
+      produces:
+        - application/json
+      parameters:
+        - name: emailAddress
+          in: path
+          description: email address to retrieve token for
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successfully returned email token
+          schema:
+            $ref: '#/definitions/emailTokenResponse'
+definitions:
+  emailTokenResponse:
+    type: object
+    properties:
+      token:
+        type: string
+  

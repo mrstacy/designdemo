@@ -8,7 +8,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use MrStacy\DesignDemo\Factory;
 use MrStacy\DesignDemo\Config;
 
-$config = new Config(__DIR__ . '/config/config.json');
+$config = new Config(__DIR__ . '/../config/config.json');
 $factory = new Factory($config);
 $app = $factory->createApplication();
 

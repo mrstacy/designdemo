@@ -11,7 +11,7 @@ consumes:
 produces:
   - application/json
 paths:
-  '/v1/emailtoken/{emailAddress}':
+  '/v1/emailtoken/email/{emailAddress}':
     get:
       description: Endpoint to retrieve an email token for an email address
       tags:
@@ -30,10 +30,40 @@ paths:
           description: Successfully returned email token
           schema:
             $ref: '#/definitions/emailTokenResponse'
+  '/v1/emailtoken/email/{emailAddress}/token/{token}':
+    get:
+      description: Endpoint to validate token
+      tags:
+        - emailToken
+      operationId: getValidateToken
+      produces:
+        - application/json
+      parameters:
+        - name: emailAddress
+          in: path
+          description: email address to validate against token
+          required: true
+          type: string
+        - name: token
+          in: path
+          description: token to validate against token
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successfully returned email token
+          schema:
+            $ref: '#/definitions/validateTokenResponse'
 definitions:
   emailTokenResponse:
     type: object
     properties:
       token:
         type: string
+  validateTokenResponse:
+    type: object
+    properties:
+      valid:
+        type: boolean
+
   

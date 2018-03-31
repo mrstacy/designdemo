@@ -19,8 +19,11 @@ class Router implements ControllerProviderInterface
         /** @var ControllerCollection $controllers */
         $controllers = $application["controllers_factory"];
     
-        // Base Url is prepended to all requests listed in this router
-        $controllers->get("/v1/emailtoken/{emailAddress}", "controller.v1.emailToken:getEmailToken");
+        // endpoint to generate email token
+        $controllers->get("/v1/emailtoken/email/{emailAddress}", "controller.v1.emailToken:getEmailToken");
+        
+        // validate email token
+        $controllers->get("/v1/emailtoken/email/{emailAddress}/token/{token}", "controller.v1.emailToken:getValidateToken");
     
         return $controllers;
     }

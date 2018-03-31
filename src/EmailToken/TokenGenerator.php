@@ -21,9 +21,6 @@ class TokenGenerator
      * 
      * Note: For purposes of this demo we are just going to keep it simple and create a 1-way token for the email address.
      * 
-     * I ideally this would probably generate a token/uuid and save it to the database along with the email address so it can be retrieve again later
-     * Alternatively, we coudl do a two-way encryption for the email address. I chose not to do this for the demo so no additional extensions would be required.
-     * 
      * @param string $emailAddress
      * @return string
      */
@@ -31,6 +28,19 @@ class TokenGenerator
     {
         $emailAddress = strtolower($emailAddress);
         
-        return crypt($emailAddress, $this->tokenSalt);
+        return md5($emailAddress . $this->tokenSalt);
+    }
+    
+    /**
+     * Check if a token is valid for an email address
+     * 
+     * @param string $emailAddress
+     * @param boolean $token
+     */
+    public function validateToken($emailAddress, $token)
+    {
+        $validToken = $this->generateToken($emailAddress);
+
+        return ( $token == $validToken);
     }
 }

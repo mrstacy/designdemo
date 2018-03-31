@@ -10,7 +10,7 @@ class TokenGeneratorTest extends \PHPUnit_Framework_TestCase
      */
     public function testGenerateToken($emailAddress, $expectedToken)
     {
-        $tokenGenerator = new TokenGenerator();
+        $tokenGenerator = new TokenGenerator('saltvalue');
         $token = $tokenGenerator->generateToken($emailAddress);
 
         self::assertEquals($expectedToken, $token);
@@ -19,11 +19,11 @@ class TokenGeneratorTest extends \PHPUnit_Framework_TestCase
     public function dataProviderEmailAddresses()
     {
         return [
-	       ['invalidemail', 'dem.IJlUK3sNQ'],
-	       ['demotester@gmail.com', 'deWnptq3lB/PE'],
-	       ['DemoTester@Gmail.com', 'deWnptq3lB/PE'],
-	       ['johndoe@yahoo.com', 'deQ7RfwrW7Kw6'],
-	       ['Edward.Testington@IHaveaReallyReallyLongDomainNameForMyEmailWhichIsProbablySillyButGoodForTestingWith.com', 'deqTkZEFLx55g'],
+	       ['invalidemail', 'sabHmnjg2D.8U'],
+	       ['demotester@gmail.com', 'saonjsPsgv7wk'],
+	       ['DemoTester@Gmail.com', 'saonjsPsgv7wk'],
+	       ['johndoe@yahoo.com', 'sa0dMN.t5Djsk'],
+	       ['Edward.Testington@IHaveaReallyReallyLongDomainNameForMyEmailWhichIsProbablySillyButGoodForTestingWith.com', 'satGA1jrTzuic'],
         ];
     }
 }

@@ -14,6 +14,19 @@ class Factory
     private $app;
     
     /**
+     * @var Config
+     */
+    private $config;
+    
+    /**
+     * @param Config $config
+     */
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+    
+    /**
      * Create the singleton Silex application and bootstrap it
      *
      * @return Application
@@ -22,13 +35,11 @@ class Factory
     {
         if (!isset($this->app)) {
             $this->app = new Application();
-    
             $this->registerServiceController();
-    
             $this->initControllers();
             $this->mountRouter();
         }
-    
+
         return $this->app;
     }
     
@@ -39,7 +50,9 @@ class Factory
      */
     private function registerServiceController()
     {
-        $this->app->register(new ServiceControllerServiceProvider());
+        $this->app->register(
+            new ServiceControllerServiceProvider()
+        );
     }
     
     /**
@@ -60,7 +73,17 @@ class Factory
      */
     private function createEmailTokenController()
     {
-        return new EmailTokenController($this->createTokenGenerator());
+        return new EmailTokenController(
+            $this->createTokenGenerator()
+        );
+    }
+    
+    /**
+     * @return Config
+     */
+    private function getConfig()
+    {
+        return $this->config;
     }
     
     /**
@@ -68,7 +91,9 @@ class Factory
      */
     private function createTokenGenerator()
     {
-        return new TokenGenerator();
+        return new TokenGenerator(
+            $this->getConfig()->getEmailTokenSalt()
+        );
     }
     
     /**

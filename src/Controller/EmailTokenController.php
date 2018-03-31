@@ -28,7 +28,7 @@ class EmailTokenController
      * 
      * @param Request $request
      * @param string $emailAddress
-     * @return string
+     * @return Response
      */
     public function getEmailToken(Request $request, $emailAddress)
     {

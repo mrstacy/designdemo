@@ -13,7 +13,7 @@ produces:
 paths:
   '/v1/emailtoken/{emailAddress}':
     get:
-      description: Endpoint to retrieve an email token for email address
+      description: Endpoint to retrieve an email token for an email address
       tags:
         - emailToken
       operationId: getEmailToken

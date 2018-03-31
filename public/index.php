@@ -6,8 +6,10 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use MrStacy\DesignDemo\Factory;
+use MrStacy\DesignDemo\Config;
 
-$factory = new Factory();
+$config = new Config(__DIR__ . '/config/config.json');
+$factory = new Factory($config);
 $app = $factory->createApplication();
 
 $app->run();

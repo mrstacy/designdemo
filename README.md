@@ -40,8 +40,8 @@ php -S 0.0.0.0:80 public/index.php
 
 Once server is started you can view REST endpoints in your browser
 ```
-http://127.0.0.1/v1/emailtoken/email/emailaddress@gmail.com
-http://127.0.0.1/v1/emailtoken/email/emailaddress@gmail.com/token/34c3836ca3d0325502f0999da4b9e480
+http://127.0.0.1/v1/email/emailaddress@gmail.com/token
+http://127.0.0.1/v1/email/emailaddress@gmail.com/token/34c3836ca3d0325502f0999da4b9e480
 ```
 
 

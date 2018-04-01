@@ -20,10 +20,10 @@ class Router implements ControllerProviderInterface
         $controllers = $application["controllers_factory"];
     
         // endpoint to generate email token
-        $controllers->get("/v1/emailtoken/email/{emailAddress}", "controller.v1.emailToken:getEmailToken");
+        $controllers->get("/v1/email/{emailAddress}/token", "controller.v1.emailToken:getEmailToken");
         
         // validate email token
-        $controllers->get("/v1/emailtoken/email/{emailAddress}/token/{token}", "controller.v1.emailToken:getValidateToken");
+        $controllers->get("/v1/email/{emailAddress}/token/{token}", "controller.v1.emailToken:getValidateToken");
     
         return $controllers;
     }

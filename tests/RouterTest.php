@@ -15,7 +15,7 @@ class RouterTest extends \PHPUnit_Framework_TestCase
         $routes = $controllers->flush();
 
         self::assertInstanceOf('Silex\ControllerCollection', $controllers);
-        self::assertArrayHasKey('GET_v1_emailtoken_email_emailAddress', $routes->all());
-        self::assertArrayHasKey('GET_v1_emailtoken_email_emailAddress_token_token', $routes->all());
+        self::assertArrayHasKey('GET_v1_email_emailAddress_token', $routes->all());
+        self::assertArrayHasKey('GET_v1_email_emailAddress_token_token', $routes->all());
     }
 }

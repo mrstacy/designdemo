@@ -20,7 +20,7 @@ class EmailTokenControllerTest extends \PHPUnit_Framework_TestCase
             
         $controller = new EmailTokenController($tokenGeneratorMock);
         
-        $request = Request::create('/v1/emailtoken/email/emailaddress@gmail.com');
+        $request = Request::create('/v1/email/emailaddress@gmail.com/token');
         
         $response = $controller->getEmailToken($request, 'emailaddress@gmail.com');
         
@@ -43,7 +43,7 @@ class EmailTokenControllerTest extends \PHPUnit_Framework_TestCase
         
         $controller = new EmailTokenController($tokenGeneratorMock);
         
-        $request = Request::create('/v1/emailtoken/email/emailaddress@gmail.com/token/abcd1234');
+        $request = Request::create('/v1/email/emailaddress@gmail.com/token/abcd1234');
         
         $response = $controller->getValidateToken($request, 'emailaddress@gmail.com', 'abcd1234');
         

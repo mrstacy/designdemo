@@ -24,7 +24,7 @@ class EmailTokenController
     /**
      * Get email token endpoint
      * 
-     * GET /v1/emailtoken/email/{emailAddress}
+     * GET /v1/email/{emailAddress}/token
      * 
      * @param Request $request
      * @param string $emailAddress
@@ -41,7 +41,7 @@ class EmailTokenController
     /**
      * Endpoint to valid an email/token is valid
      *
-     * GET /v1/emailtoken/email/{emailAddress}/token/{token}
+     * GET /v1/email/{emailAddress}/token/{token}
      *
      * @param Request $request
      * @param string $emailAddress

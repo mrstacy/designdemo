@@ -26,7 +26,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
      */
     public function testV1EmailTokenRequest($emailAddress, $expectedToken)
     {
-        $request = Request::create("/v1/emailtoken/email/{$emailAddress}");
+        $request = Request::create("/v1/email/{$emailAddress}/token");
         
         $response = $this->app->handle($request);
         $result = json_decode($response->getContent());
@@ -41,7 +41,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
      */
     public function testV1EmailTokenValidateRequest($emailAddress, $token)
     {
-        $request = Request::create("/v1/emailtoken/email/{$emailAddress}/token/{$token}");
+        $request = Request::create("/v1/email/{$emailAddress}/token/{$token}");
         
         $response = $this->app->handle($request);
         $result = json_decode($response->getContent());

@@ -11,7 +11,7 @@ consumes:
 produces:
   - application/json
 paths:
-  '/v1/emailtoken/email/{emailAddress}':
+  '/v1/email/{emailAddress}/token':
     get:
       description: Endpoint to retrieve an email token for an email address
       tags:
@@ -30,7 +30,7 @@ paths:
           description: Successfully returned email token
           schema:
             $ref: '#/definitions/emailTokenResponse'
-  '/v1/emailtoken/email/{emailAddress}/token/{token}':
+  '/v1/email/{emailAddress}/token/{token}':
     get:
       description: Endpoint to validate token
       tags:

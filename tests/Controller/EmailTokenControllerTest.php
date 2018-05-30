@@ -4,8 +4,9 @@ namespace MrStacy\DesignDemo\Controller\Tests;
 use MrStacy\DesignDemo\EmailToken\TokenGenerator;
 use MrStacy\DesignDemo\Controller\EmailTokenController;
 use Symfony\Component\HttpFoundation\Request;
+use PHPUnit\Framework\TestCase;
 
-class EmailTokenControllerTest extends \PHPUnit_Framework_TestCase
+class EmailTokenControllerTest extends TestCase
 {
     public function testGetEmailToken()
     {

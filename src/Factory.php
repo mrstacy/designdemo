@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace MrStacy\DesignDemo;
 
 use MrStacy\DesignDemo\Controller\EmailTokenController;
@@ -31,7 +33,7 @@ class Factory
      *
      * @return Application
      */
-    public function createApplication()
+    public function createApplication() : Application
     {
         if (!isset($this->app)) {
             $this->app = new Application();
@@ -71,7 +73,7 @@ class Factory
     /**
      * @return EmailTokenController
      */
-    private function createEmailTokenController()
+    private function createEmailTokenController() : EmailTokenController
     {
         return new EmailTokenController(
             $this->createTokenGenerator()
@@ -81,7 +83,7 @@ class Factory
     /**
      * @return Config
      */
-    private function getConfig()
+    private function getConfig() : Config
     {
         return $this->config;
     }
@@ -89,7 +91,7 @@ class Factory
     /**
      * @return TokenGenerator
      */
-    private function createTokenGenerator()
+    private function createTokenGenerator() : TokenGenerator
     {
         return new TokenGenerator(
             $this->getConfig()->getEmailTokenSalt()

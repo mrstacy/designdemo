@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace MrStacy\DesignDemo\Controller;
 
 use MrStacy\DesignDemo\EmailToken\TokenGenerator;
@@ -30,7 +32,7 @@ class EmailTokenController
      * @param string $emailAddress
      * @return Response
      */
-    public function getEmailToken(Request $request, $emailAddress)
+    public function getEmailToken(Request $request, string $emailAddress) : Response
     {
         $token = $this->tokenGenerator->generateToken($emailAddress);
         
@@ -48,7 +50,7 @@ class EmailTokenController
      * @param string $token
      * @return Response
      */
-    public function getValidateToken(Request $request, $emailAddress, $token)
+    public function getValidateToken(Request $request, string $emailAddress, string $token) : Response
     {
         $isTokenValid = $this->tokenGenerator->validateToken($emailAddress, $token);
         

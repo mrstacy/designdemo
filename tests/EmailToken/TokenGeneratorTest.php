@@ -2,8 +2,9 @@
 namespace MrStacy\DesignDemo\EmailToken\Tests;
 
 use MrStacy\DesignDemo\EmailToken\TokenGenerator;
+use PHPUnit\Framework\TestCase;
 
-class TokenGeneratorTest extends \PHPUnit_Framework_TestCase
+class TokenGeneratorTest extends TestCase
 {
     /**
      * @dataProvider dataProviderEmailAddresses

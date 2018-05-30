@@ -1,8 +1,12 @@
 <?php
+declare(strict_types=1);
+
 namespace MrStacy\DesignDemo;
 
 class Config
 {
+    const CONFIG_EMAIL_TOKEN_SALT = 'emailTokenSalt';
+    
     private $config;
     
     /**
@@ -10,7 +14,7 @@ class Config
      * 
      * @param string $configFile
      */
-    public function __construct($configFile) 
+    public function __construct($configFile)
     {
         $this->config = json_decode(file_get_contents($configFile), true);        
     }
@@ -20,8 +24,20 @@ class Config
      * 
      * @return string
      */
-    public function getEmailTokenSalt()
+    public function getEmailTokenSalt() : ?string
     {
-        return $this->config['emailTokenSalt'];
+        return $this->getConfig(self::CONFIG_EMAIL_TOKEN_SALT);
+    }
+    
+    /**
+     * Get config value
+     * 
+     * @param string $configName
+     */
+    private function getConfig(string $configName)
+    {
+       return isset($this->config[$configName]) ? 
+                $this->config[$configName] :
+                null;
     }
 }

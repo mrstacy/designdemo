@@ -3,8 +3,9 @@ namespace MrStacy\DesignDemo\Tests;
 
 use MrStacy\DesignDemo\Router;
 use Silex\Application;
+use PHPUnit\Framework\TestCase;
 
-class RouterTest extends \PHPUnit_Framework_TestCase
+class RouterTest extends TestCase
 {
     public function testConnect()
     {

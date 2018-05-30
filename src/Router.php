@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace MrStacy\DesignDemo;
 
 use Silex\Application;
@@ -14,7 +16,7 @@ class Router implements ControllerProviderInterface
      * @param Application $Application
      * @return ControllerCollection
      */
-    public function connect(Application $application)
+    public function connect(Application $application) : ControllerCollection
     {
         /** @var ControllerCollection $controllers */
         $controllers = $application["controllers_factory"];

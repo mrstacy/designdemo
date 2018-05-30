@@ -3,8 +3,9 @@ namespace MrStacy\DesignDemo\Tests;
 
 use MrStacy\DesignDemo\Factory;
 use MrStacy\DesignDemo\Config;
+use PHPUnit\Framework\TestCase;
 
-class FactoryTest extends \PHPUnit_Framework_TestCase
+class FactoryTest extends TestCase
 {
     public function testCreateFactory()
     {

@@ -3,10 +3,11 @@ namespace MrStacy\DesignDemo\Tests\Functional;
 
 use MrStacy\DesignDemo\Config;
 use MrStacy\DesignDemo\Factory;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Application;
 
-class AppTest extends \PHPUnit_Framework_TestCase
+class AppTest extends TestCase
 {
     /**
      * @var Application

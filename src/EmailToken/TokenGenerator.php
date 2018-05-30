@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace MrStacy\DesignDemo\EmailToken;
 
 class TokenGenerator
@@ -24,7 +26,7 @@ class TokenGenerator
      * @param string $emailAddress
      * @return string
      */
-    public function generateToken($emailAddress)
+    public function generateToken($emailAddress) : string
     {
         $emailAddress = strtolower($emailAddress);
         
@@ -35,12 +37,12 @@ class TokenGenerator
      * Check if a token is valid for an email address
      * 
      * @param string $emailAddress
-     * @param boolean $token
+     * @param string $token
      */
-    public function validateToken($emailAddress, $token)
+    public function validateToken(string $emailAddress, string $token) : bool
     {
         $validToken = $this->generateToken($emailAddress);
 
-        return ( $token == $validToken);
+        return ($token == $validToken);
     }
 }
